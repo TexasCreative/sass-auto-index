@@ -68,7 +68,7 @@ class sassAutoIndex {
   makeIndex = (fileNames, dirPath) => {
     const forwardName = [];
     for(const fileName of fileNames) {
-      forwardName.push(`@include '${fileName}';`);
+      forwardName.push(`@include "${fileName}";`);
     }
     const str = forwardName.join('\n');
     fs.writeFile(`${dirPath}/_index.scss`, str, (err) => {
